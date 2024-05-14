@@ -1,0 +1,46 @@
+THIS IS QUERRY WHICH IS USED TO DELETE THIS TWO ('PV_Value_(Number)', 'FV_Value_(Number)') COLUMN AND ROW FROM THE BASE PROPERTY AND THE TABLE NAME IS ACTION_TABLE_SETUP. THIS WHICH I'M WORKING ON ACTION TABLE SET UP AND ACTION TABLE SET UP MODEL.
+
+
+
+delete from Base_Property where name in ('PV_Value_(Number)', 'FV_Value_(Number)') and [Table]= (select  Id from Base_Table where name = 'Action_Table_Setup')
+
+delete from Base_Property where name in ('PV_Value_(Number)', 'FV_Value_(Number)') and [Table]= (select  Id from Base_Table where name = 'Action_Table_Setup_AL')
+
+delete from Base_Property where name in ('PV_Value_(Number)', 'FV_Value_(Number)') and [Table]= (select  Id from Base_Table where name = 'Action_Table_Setup_VR')
+
+
+
+select * from Base_Property where name in ('PV_Value_(Number)', 'FV_Value_(Number)') and [Table]= (select top 1 Id from Base_Table where name = 'Action_Table_Setup_ALP')
+
+
+select * from Base_Property where name in ('PV_Value_(Number)', 'FV_Value_(Number)') and [Table]= (select  Id from Base_Table where name = 'Action_Table_Setup')
+
+select Property from Action_Table_Setup_ALP where Property in ('51F023D8-E75D-44DB-8974-44ABDBF9FAA3','26076F27-74D4-4D52-8A10-F3F3FB4030BD') 
+
+DELETE FROM Action_Table_Setup_ALP WHERE Property IN ('51F023D8-E75D-44DB-8974-44ABDBF9FAA3', '26076F27-74D4-4D52-8A10-F3F3FB4030BD');
+
+
+select * from Table_Relationship where Related_Property in ('51F023D8-E75D-44DB-8974-44ABDBF9FAA3','26076F27-74D4-4D52-8A10-F3F3FB4030BD') 
+DELETE FROM Table_Relationship WHERE Property IN ('51F023D8-E75D-44DB-8974-44ABDBF9FAA3', '26076F27-74D4-4D52-8A10-F3F3FB4030BD');
+
+select * from Table_Relationship where Property in ('51F023D8-E75D-44DB-8974-44ABDBF9FAA3','26076F27-74D4-4D52-8A10-F3F3FB4030BD') 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.The DELETE statement conflicted with the REFERENCE constraint "FK_Model_Table_Relationship_Base_Property_Property". The conflict occurred in database "FxS-SQLDB-Testing-April-29-1017", table "dbo.Table_Relationship", column 'Property'
+
+2.The DELETE statement conflicted with the REFERENCE constraint "FK__Model_Table_Relationship__Model_Property_Id__Model_Property". The conflict occurred in database "FxS-SQLDB-Testing-April-29-1017", table "dbo.Table_Relationship", column 'Related_Property'.
+
+
+
